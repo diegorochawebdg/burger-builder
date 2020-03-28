@@ -1,10 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-import classes from './BurgerIngredient.module.scss'
-
-export interface IBurgerIngredient {
-  type: 'bread-bottom' | 'bread-top' | 'meat' | 'cheese' | 'bacon' | 'salad';
-}
+import IBurgerIngredient from '../../../interfaces/IBurgerIngredient.interface';
+import classes from './BurgerIngredient.module.scss';
 
 const BurgerIngredient = (props: IBurgerIngredient) => {
   let ingredient = null;
