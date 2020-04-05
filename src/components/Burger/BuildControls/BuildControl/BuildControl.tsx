@@ -1,13 +1,7 @@
 import React from 'react'
 
 import classes from './BuildControl.module.scss'
-
-export interface IBuildControl {
-  label: string,
-  added: any,
-  removed: any,
-  disabled: boolean,
-}
+import { IBuildControl } from '../../../../interfaces/IBuildControl.interface'
 
 const BuildControl = (props: IBuildControl) => {
   return (
