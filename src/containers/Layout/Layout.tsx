@@ -1,8 +1,8 @@
 import React, { Fragment, Component } from 'react';
 
 import classes from './Layout.module.scss';
-import Toolbar from '../Navigation/Toolbar/Toolbar';
-import Sidedrawer from '../Navigation/Sidedrawer/Sidedrawer';
+import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
+import Sidedrawer from '../../components/Navigation/Sidedrawer/Sidedrawer';
 
 class Layout extends Component {
   state = {
