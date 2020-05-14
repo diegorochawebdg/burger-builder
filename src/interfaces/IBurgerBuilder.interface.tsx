@@ -5,6 +5,8 @@ export default interface IBurgerState {
   totalPrice: number;
   purchasable: boolean;
   purchasing: boolean;
+  loading?: boolean;
+  error?: boolean;
 }
 
 export type IBurgerBuilderIngredient = {
