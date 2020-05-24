@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import burgerLogo from '../../assets/images/burger-logo.png';
 import classes from './Logo.module.scss';
@@ -8,7 +9,7 @@ const Logo = (props: any) => {
     <div 
       className={classes.Logo}
       style={{height: props.height}}>
-      <img alt="Burger logo" src={burgerLogo} />
+        <NavLink to="/"><img alt="Burger logo" src={burgerLogo} /></NavLink>
     </div>
   )
 }
