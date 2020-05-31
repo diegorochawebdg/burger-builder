@@ -1,34 +1,27 @@
-import React, { Fragment, Component } from 'react'
+import React, { Fragment } from 'react';
+import Backdrop from '../Backdrop/Backdrop';
+import classes from './Modal.module.scss';
 
-import classes from './Modal.module.scss'
-import Backdrop from '../Backdrop/Backdrop'
+const Modal = (props: any) => {
+  return (
+    <Fragment>
+      <Backdrop show={props.show} clicked={props.modalClosed} />
+      <div
+        className={classes.Modal}
+        style={{
+          transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
+          opacity: props.show ? '1' : '0',
+        }}
+      >
+        {props.children}
+      </div>
+    </Fragment>
+  );
+};
 
-class Modal extends Component<any> {
-  shouldComponentUpdate(nextProps: any) {
-    return nextProps.show !== this.props.show || nextProps.children !== this.props.children;
-  }
-
-  componentDidUpdate() {
-    console.log('[Modal} DidUpdate');
-  }
-
-  render() {
-    return (
-      <Fragment>
-        <Backdrop 
-          show={this.props.show}
-          clicked={this.props.modalClosed} />
-        <div 
-          className={classes.Modal}
-          style={{
-            transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)',
-            opacity: this.props.show ? '1' : '0',
-          }}>
-          {this.props.children}
-        </div>
-      </Fragment>
-    )
-  }
-}
-
-export default Modal
+export default React.memo(
+  Modal,
+  (prevProps, nextProps) =>
+    nextProps.show === prevProps.show &&
+    nextProps.children === prevProps.children,
+);

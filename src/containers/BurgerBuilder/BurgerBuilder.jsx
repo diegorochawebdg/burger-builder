@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { Fragment, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import Axios from '../../axios-orders';
@@ -12,10 +11,11 @@ import * as actions from './../../store/actions';
 
 const BurgerBuilder = (props) => {
   const [purchasing, setPurchasing] = useState(false);
+  const { onInitIngredients } = props;
 
   useEffect(() => {
-    props.onInitIngredients();
-  }, [props.onInitIngredients]);
+    onInitIngredients();
+  }, [onInitIngredients]);
 
   const updatePurchase = (ingredients) => {
     const sum = Object.keys(ingredients)

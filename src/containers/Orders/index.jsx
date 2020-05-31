@@ -8,9 +8,11 @@ import WithErrorHandler from '../WithErrorHandler/WithErrorHandler';
 import * as actions from './../../store/actions';
 
 const Orders = (props) => {
+  const { onFetchOrders } = props;
+
   useEffect(() => {
-    props.onFetchOrders();
-  }, [props.onFetchOrders]);
+    onFetchOrders();
+  }, [onFetchOrders]);
 
   let orders = <Spinner />;
 
